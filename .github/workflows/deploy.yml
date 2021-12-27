@@ -1,4 +1,4 @@
-name: last-githubaction
+name: github-action-stalk-no-nginx
 on:
   push:
     branches:
