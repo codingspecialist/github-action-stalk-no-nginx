@@ -17,6 +17,6 @@ public class BlogControllerTest {
 	@Test
 	public void home() {
 		ResponseEntity<String> response = restTemplate.getForEntity("/", String.class);
-		assertEquals("<h1>Version Last</h1>", response.getBody());
+		assertEquals("<h1>nginxproxy - elasticbeanstalk</h1>", response.getBody());
 	}
 }
