@@ -8,6 +8,6 @@ public class BlogController {
 
 	@GetMapping("/")
 	public String home() {
-		return "<h1>nginxproxy - elasticbeanstalk</h1>";
+		return "<h1>jar 배포 V2</h1>";
 	}
 }
