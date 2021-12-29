@@ -8,6 +8,6 @@ public class BlogController {
 
 	@GetMapping("/")
 	public String home() {
-		return "<h1>jar 배포 V2</h1>";
+		return "<h1>README 최종 수정 - 정리끝</h1> 자세히 : <a>https://github.com/codingspecialist/github-action-stalk-no-nginx/blob/master/README.md</a>";
 	}
 }

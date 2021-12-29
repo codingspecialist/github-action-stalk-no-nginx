@@ -18,6 +18,10 @@
 - .platform/nginx/nginx.conf 파일을 이용하여 80포트 요청시 내부 임베디드 8080으로 요청을 리다이렉션 해준다.
 - 200 ok가 뜨기 때문에 기존 인스턴스를 업데이트하게 된다.
 - 업데이트시에 deploy.zip 파일이 배포된다.
-- .ebextensions/00-makeFiles.config 파일이 배포되면서 그 내부가 Procfile에 의해서 실행된다.
-- 실행이 완료되면 배포가 완료된다. 
-- 이때 기존 Java 서버가 실행되고 있다면 꼭 중지하고 재실행해줘야 한다.
+- /var/app/current/ 이쪽으로 deploy.zip이 배포되고 자동으로 압축이 풀린다.
+- .ebextensions/00-makeFiles.config 파일이 자동 실행되어 /sbin/appstart 파일이 생성된다.
+- Procfile 파일이 실행되면서 /sbin/appstart 파일이 실행된다.
+- 이때 기존 Java 서버가 실행되고 있다면 꼭 중지하고 재실행해줘야 하는데 추가 배치 롤링 방식이나, 변경불가능 롤링 방식은 자바 서버 중지를 안해도 된다.
+
+### 수동 배포할 때!
+- 콘솔화면에서 jar파일을 수동배포하게 되면 jar파일이 /var/app/current 폴더에 배포되면서 jar -jar (배포된 파일명)이 자동실행되서 옵션을 줄 수는 없다.

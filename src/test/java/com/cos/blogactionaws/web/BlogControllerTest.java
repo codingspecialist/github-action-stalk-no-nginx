@@ -17,6 +17,6 @@ public class BlogControllerTest {
 	@Test
 	public void home() {
 		ResponseEntity<String> response = restTemplate.getForEntity("/", String.class);
-		assertEquals("<h1>jar 배포 V2</h1>", response.getBody());
+		assertEquals("<h1>README 최종 수정 - 정리끝</h1> 자세히 : <a>https://github.com/codingspecialist/github-action-stalk-no-nginx/blob/master/README.md</a>", response.getBody());
 	}
 }
